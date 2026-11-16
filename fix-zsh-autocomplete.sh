@@ -144,7 +144,7 @@ for p in zsh-autosuggestions zsh-syntax-highlighting fast-syntax-highlighting zs
     fetch ".oh-my-zsh/custom/plugins/$p" "$p" "$ZSH_CUSTOM_DIR/plugins/$p"
   fi
 done
-if [[ ! -d $ZSH_CUSTOM_DIR/themes/powerlevel10k ]]; then
+if [[ ! -d $ZSH_CUSTOM_DIR/themes/powerlevel10k ]] && grep -q '^ZSH_THEME=.*powerlevel10k' "$ZSHRC"; then
   say "Installing theme powerlevel10k"
   fetch .oh-my-zsh/custom/themes/powerlevel10k powerlevel10k "$ZSH_CUSTOM_DIR/themes/powerlevel10k"
 fi
